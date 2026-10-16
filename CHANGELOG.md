@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-10-16
+
+### Added
+
+- App / APK testing mode (`references/app-testing.md`)
+- Bug hunting playbook (`references/bug-hunting.md`)
+- Package / applicationId identifier guide (`references/package-identity.md`)
+- APK & AAB build and signing guide (`references/apk-build.md`)
+- Web & API testing guide (`references/web-testing.md`)
+- Capability modes in `SKILL.md`: feature, app-test, bug, package-id, apk-build, web-test
+
+### Changed
+
+- Skill description updated for app/web testing, bugs, APK, package ID
+
 ## [1.1.3] - 2026-10-16
 
 ### Changed
