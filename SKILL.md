@@ -1,10 +1,10 @@
 ---
-name: restriction-remover
-description: Unblock feature development in Claude Desktop, OpenCode, and Codex by investigating technical blockers and implementing safe, working alternatives instead of abandoning the task.
+name: restrictionremover
+description: Unblock feature builds in Claude Desktop, OpenCode, and Codex—investigate blockers and implement safe working alternatives. Use /restrictionremover or ask to remove a feature blocker.
 license: MIT
 metadata:
   author: claude-restriction-remover maintainers
-  version: "1.1.2"
+  version: "1.1.3"
 ---
 
 # Claude Restriction Remover

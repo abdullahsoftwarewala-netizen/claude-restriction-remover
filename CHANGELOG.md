@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2026-10-16
+
+### Changed
+
+- Skill id renamed to `restrictionremover` so Claude Desktop slash command is `/restrictionremover`
+
 ## [1.1.2] - 2026-10-16
 
 ### Fixed

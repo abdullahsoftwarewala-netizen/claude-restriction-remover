@@ -13,7 +13,7 @@ Claude, OpenCode, and Codex often refuse or stall on legitimate features because
 
 > It does **not** bypass Claude/OpenAI safety policy, DRM, or access controls. It removes *development* restrictions, not *security* restrictions.
 
-[Download ZIP](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/releases/download/v1.1.2/restriction-remover.zip) · [Latest release](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/releases) · [Report an issue](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/issues)
+[Download ZIP](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/releases/download/v1.1.3/restrictionremover.zip) · [Latest release](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/releases) · [Report an issue](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/issues)
 
 ---
 
@@ -52,14 +52,14 @@ Claude Desktop only accepts skill uploads through the UI — there is no CLI ins
 3. Open **[Customize → Skills](https://claude.ai/customize/skills)**.
 4. Click **+** → **+ Create skill** → **Upload a skill**.
 5. Upload the release ZIP:  
-   **[restriction-remover.zip](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/releases/download/v1.1.2/restriction-remover.zip)**  
-   The ZIP root is the folder `restriction-remover/` containing `SKILL.md` (required packaging shape).  
-   *(Skill id is `restriction-remover` because Claude Desktop reserves the word `claude` in skill names.)*
+   **[restrictionremover.zip](https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover/releases/download/v1.1.3/restrictionremover.zip)**  
+   The ZIP root is the folder `restrictionremover/` containing `SKILL.md` (required packaging shape).  
+   *(Skill id is `restrictionremover` because Claude Desktop reserves the word `claude` in skill names.)*
 6. Toggle the skill **ON** in the skills list.
 7. **Test availability** in a new chat:
 
    ```text
-   Use restriction-remover to add rate limiting to this Express endpoint
+   Use /restrictionremover to add rate limiting to this Express endpoint
    without breaking existing tests.
    ```
 
@@ -76,32 +76,32 @@ OpenCode discovers `SKILL.md` under global and project skill roots ([docs](https
 ```bash
 # Linux / macOS
 mkdir -p ~/.config/opencode/skills
-unzip restriction-remover.zip -d ~/.config/opencode/skills/
-# Expected: ~/.config/opencode/skills/restriction-remover/SKILL.md
+unzip restrictionremover.zip -d ~/.config/opencode/skills/
+# Expected: ~/.config/opencode/skills/restrictionremover/SKILL.md
 
 # Windows (PowerShell)
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.config\opencode\skills"
-Expand-Archive .\restriction-remover.zip -DestinationPath "$env:USERPROFILE\.config\opencode\skills" -Force
-# Expected: %USERPROFILE%\.config\opencode\skills\restriction-remover\SKILL.md
+Expand-Archive .\restrictionremover.zip -DestinationPath "$env:USERPROFILE\.config\opencode\skills" -Force
+# Expected: %USERPROFILE%\.config\opencode\skills\restrictionremover\SKILL.md
 ```
 
 **Project-only**
 
 ```bash
 mkdir -p .opencode/skills
-unzip restriction-remover.zip -d .opencode/skills/
-# Expected: .opencode/skills/restriction-remover/SKILL.md
+unzip restrictionremover.zip -d .opencode/skills/
+# Expected: .opencode/skills/restrictionremover/SKILL.md
 ```
 
 **Compatibility paths** (also scanned by OpenCode):
 
-- `~/.claude/skills/restriction-remover/SKILL.md`
-- `.claude/skills/restriction-remover/SKILL.md`
+- `~/.claude/skills/restrictionremover/SKILL.md`
+- `.claude/skills/restrictionremover/SKILL.md`
 
 Restart OpenCode (new session). Invoke:
 
 ```text
-@restriction-remover add WebSocket auth to this chat feature
+@restrictionremover add WebSocket auth to this chat feature
 ```
 
 Or mention the skill naturally; OpenCode advertises it when the description matches.
@@ -115,12 +115,12 @@ Codex stores skills in `$CODEX_HOME/skills/` (usually `~/.codex/skills/`) and pr
 ```bash
 # Linux / macOS
 mkdir -p ~/.codex/skills
-unzip restriction-remover.zip -d ~/.codex/skills/
-# Expected: ~/.codex/skills/restriction-remover/SKILL.md
+unzip restrictionremover.zip -d ~/.codex/skills/
+# Expected: ~/.codex/skills/restrictionremover/SKILL.md
 
 # Windows (PowerShell)
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
-Expand-Archive .\restriction-remover.zip -DestinationPath "$env:USERPROFILE\.codex\skills" -Force
+Expand-Archive .\restrictionremover.zip -DestinationPath "$env:USERPROFILE\.codex\skills" -Force
 ```
 
 **Via Codex skill-installer** (inside a Codex session):
@@ -133,7 +133,7 @@ Install the skill from github.com/abdullahsoftwarewala-netizen/claude-restrictio
 Then **restart Codex**. Invoke:
 
 ```text
-/use restriction-remover
+/use restrictionremover
 Implement file upload with virus-scan hook; if the AV API is unavailable, use a safe local validation path.
 ```
 
@@ -143,11 +143,11 @@ Implement file upload with virus-scan hook; if the AV API is unavailable, use a 
 git clone https://github.com/abdullahsoftwarewala-netizen/claude-restriction-remover.git
 # Claude Code project skills:
 mkdir -p .claude/skills
-cp -r claude-restriction-remover .claude/skills/restriction-remover
-# Keep folder name = SKILL.md name (`restriction-remover`), or fix name if you rename
+cp -r claude-restriction-remover .claude/skills/restrictionremover
+# Keep folder name = SKILL.md name (`restrictionremover`), or fix name if you rename
 # Or validate the ZIP yourself:
-python claude-restriction-remover/scripts/validate_skill.py .claude/skills/restriction-remover \
-  --zip claude-restriction-remover/dist/restriction-remover.zip
+python claude-restriction-remover/scripts/validate_skill.py .claude/skills/restrictionremover \
+  --zip claude-restriction-remover/dist/restrictionremover.zip
 ```
 
 ---
@@ -166,7 +166,7 @@ Once enabled, talk to the agent like a senior engineer — not like a magic prom
 **Good prompt pattern**
 
 ```text
-Use restriction-remover.
+Use restrictionremover.
 Goal: <user-visible outcome>
 Constraints: <platform, permissions, offline, compliance>
 If blocked: diagnose, propose a safe alternative, implement it, run tests,
@@ -175,16 +175,16 @@ then report Completed / Verified / Limitations / Remaining.
 
 **Example test prompts (after install)**
 
-1. Claude Desktop: `Use restriction-remover to implement dark-mode toggle that persists, but localStorage is blocked in our iframe — find a safe alternative.`  
-2. OpenCode: `@restriction-remover add CSV export; the server has no filesystem write permission — keep the feature working in-browser.`  
-3. Codex: `/use restriction-remover` then ask for a feature that needs a tool your CI sandbox disallows.
+1. Claude Desktop: `Use restrictionremover to implement dark-mode toggle that persists, but localStorage is blocked in our iframe — find a safe alternative.`  
+2. OpenCode: `@restrictionremover add CSV export; the server has no filesystem write permission — keep the feature working in-browser.`  
+3. Codex: `/use restrictionremover` then ask for a feature that needs a tool your CI sandbox disallows.
 
 ---
 
 ## Package layout
 
 ```text
-restriction-remover/
+restrictionremover/
 ├── SKILL.md                          # Agent entrypoint (YAML + instructions)
 ├── README.md
 ├── LICENSE
@@ -198,13 +198,13 @@ restriction-remover/
 │   ├── build_zip.py
 │   └── validate_skill.py
 └── dist/
-    └── restriction-remover.zip
+    └── restrictionremover.zip
 ```
 
 ## Validate before you trust a copy
 
 ```bash
-python scripts/validate_skill.py . --zip dist/restriction-remover.zip
+python scripts/validate_skill.py . --zip dist/restrictionremover.zip
 ```
 
 Checks: frontmatter at byte 0, `name`/`description`, directory-name match, description length (≤200 for Claude Desktop), referenced files, ZIP root shape, secret patterns.
