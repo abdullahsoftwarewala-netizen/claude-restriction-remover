@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 # Skill root folder name inside the ZIP (must match SKILL.md `name`)
-SKILL_NAME = "claude-restriction-remover"
+SKILL_NAME = "restriction-remover"
 INCLUDE_FILES = {
     "SKILL.md",
     "README.md",
