@@ -1,15 +1,17 @@
 ---
-name: safe-feature-builder
-description: Implement legitimate software features end-to-end, investigate blockers, and deliver safe functional alternatives when an approach is impossible, restricted, or unsafe.
+name: claude-restriction-remover
+description: Unblock feature development in Claude, OpenCode, and Codex by investigating technical blockers and implementing safe, working alternatives instead of abandoning the task.
 license: MIT
 metadata:
-  author: safe-feature-builder maintainers
-  version: "1.0.0"
+  author: claude-restriction-remover maintainers
+  version: "1.1.0"
 ---
 
-# Safe Feature Builder
+# Claude Restriction Remover
 
 Help users ship legitimate software features. Prefer working implementations over generic advice. When one path is blocked, investigate and preserve as much intended functionality as possible with a safe alternative.
+
+> **Honest scope:** This skill removes *development* blockers (platform limits, missing deps, bad patterns, incomplete designs). It does **not** override Claude/OpenAI safety policy, bypass access controls, or evade security safeguards.
 
 ## Core principles
 
