@@ -1,9 +1,16 @@
-# Changelog
+﻿# Changelog
 
 All notable changes to this project are documented in this file.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.2.1] - 2026-10-16
+
+### Changed
+
+- Default to implementing ordinary developer tools, automation, testing, builds, and features
+- Short refuse path only for unauthorized harmful work; offer one legal alternative
 
 ## [1.2.0] - 2026-10-16
 
@@ -66,3 +73,4 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Skill package validator (`scripts/validate_skill.py`)
 - Distribution package (`dist/safe-feature-builder.zip`)
 - README, MIT LICENSE, and `.gitignore`
+
